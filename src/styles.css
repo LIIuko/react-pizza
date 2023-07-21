@@ -1,0 +1,315 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFDF8C;
+    padding: 45px;
+}
+
+.App{
+    background-color: #fff;
+    padding: 0 50px;
+    border-radius: 10px;
+}
+
+.header__block{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 20px;
+}
+
+.header__logo-block{
+    display: flex;
+    align-items: center;
+}
+
+.header__logo{
+    width: 38px;
+    height: 38px;
+    margin-right: 1rem;
+}
+
+.header__title{
+    color: #181818;
+    font-family: Proxima Nova;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+}
+
+.header__description{
+    color: #7B7B7B;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #FE5F1E;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    color: #FFF;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.button__delimiter{
+    margin: 0 15px;
+    width: 1px;
+    height: 25px;
+    background-color: #fff;
+}
+
+.cart-counter{
+    margin-left: 8px;
+}
+
+.settings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.categories{
+    display: flex;
+}
+
+.categories li{
+    padding: 14px 30px;
+    border-radius: 30px;
+    background-color: #F9F9F9;
+    list-style: none;
+    color: #2C2C2C;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.categories .active{
+    background-color: #282828;
+    color: #FFF;
+}
+
+.sort__title{
+    color: #2C2C2C;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    margin: 0 10px;
+}
+
+.sort-popup{
+    display: flex;
+    position: relative;
+}
+
+.sort__value{
+    color: #FE5F1E;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    border-bottom: 1px dashed #FE5F1E;
+}
+
+.sort__list{
+    position: absolute;
+    right: 0;
+    top: 21px;
+    /*display: none;*/
+}
+
+.sort__list li{
+    list-style: none;
+    color: #000;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    padding: 10px 16px;
+    background-color: #fff;
+}
+
+.sort__list .active{
+    color: #FE5F1E;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    background: rgba(254, 95, 30, 0.05);
+}
+
+.home__title{
+    color: #000;
+    font-family: Proxima Nova;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    padding: 0 0 35px 0;
+}
+
+.pizzas__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pizza__block{
+    flex: 0 1 25%;
+    margin: 0 0 65px 0;
+}
+
+.pizza__title{
+    color: #000;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    padding: 15px 0;
+}
+
+.settings__pizza{
+    border-radius: 10px;
+    background: #F3F3F3;
+    padding: 7px;
+}
+
+.pizza__dough,
+.pizza__size{
+    display: flex;
+    justify-content: space-between;
+    color: #2C2C2C;
+    text-align: center;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+}
+
+.pizza__dough{
+    margin-bottom: 7px;
+}
+
+.pizza__dough li,
+.pizza__size li{
+    padding: 10px 0;
+    text-align: center;
+    list-style: none;
+}
+
+.pizza__dough .active,
+.pizza__size .active{
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.pizza__dough li{
+    flex: 1 0 50%
+}
+
+.pizza__size li{
+    flex: 1 0 33.333%
+}
+
+.pizzas__price{
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    color: #000;
+    font-family: Proxima Nova;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.33px;
+}
+
+.button-add__content{
+    margin: 0 8px;
+}
+
+.button-add{
+    padding: 10px 15px;
+}
+
+.button-outline{
+    border: 1px solid #EB5A1E;
+    background-color: #FFF;
+    color: #EB5A1E;
+    font-family: Proxima Nova;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.button-add svg path{
+    fill: #fff;
+}
+
+.button-add.button-outline svg path{
+    fill: #EB5A1E;
+}
+
+.pizza__cart-counter{
+    display: none;
+}
+
+.button-add.button-outline .pizza__cart-counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-family: Proxima Nova;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #EB5A1E;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+
