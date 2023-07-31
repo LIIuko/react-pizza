@@ -125,10 +125,16 @@ body{
 
 .sort-popup{
     display: flex;
+    align-items: center;
     position: relative;
 }
 
+.rotated{
+    transform: rotateZ(180deg);
+}
+
 .sort__value{
+    cursor: pointer;
     color: #FE5F1E;
     font-family: Proxima Nova;
     font-size: 14px;
@@ -147,6 +153,7 @@ body{
 }
 
 .sort__list li{
+    cursor: pointer;
     list-style: none;
     color: #000;
     font-family: Proxima Nova;
@@ -184,11 +191,17 @@ body{
 .pizzas__container{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -15px;
 }
 
 .pizza__block{
-    flex: 0 1 25%;
-    margin: 0 0 65px 0;
+    flex: 0 1 22.9%;
+    margin: 15px 0 65px 15px;
+}
+
+.pizza__img{
+    width: 100%;
+    height: 100%;
 }
 
 .pizza__title{
@@ -211,6 +224,7 @@ body{
 
 .pizza__dough,
 .pizza__size{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     color: #2C2C2C;
