@@ -4,7 +4,7 @@ const SortPopup = ({items, onClickItem}) => {
 
     const [visiblePopup, setVisiblePopup] = React.useState(false);
     const sortRef = React.useRef();
-    const [activeSortType, setActiveSortType] = useState('popular');
+    const [activeSortType, setActiveSortType] = useState('rating');
 
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup);
@@ -35,7 +35,7 @@ const SortPopup = ({items, onClickItem}) => {
             <span
                 onClick={toggleVisiblePopup}
                 className='sort__value'>
-                {items.find(item => item.type === activeSortType).name}
+                {items.find(item => item.type === activeSortType)?.name}
             </span>
             {visiblePopup &&
                 <ul className='sort__list'>
