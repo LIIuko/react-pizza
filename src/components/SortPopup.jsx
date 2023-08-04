@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
-const SortPopup = ({items, onClickItem}) => {
+const SortPopup = ({items, onClickItem, activeSortType}) => {
 
     const [visiblePopup, setVisiblePopup] = React.useState(false);
     const sortRef = React.useRef();
-    const [activeSortType, setActiveSortType] = useState('rating');
 
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup);
@@ -18,7 +17,6 @@ const SortPopup = ({items, onClickItem}) => {
     };
 
     const onSelectCategory = (index) => {
-        setActiveSortType(index);
         onClickItem(index);
     }
 

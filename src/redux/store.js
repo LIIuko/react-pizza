@@ -2,11 +2,13 @@ import {filters} from "./reducers/filters";
 import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import {pizzas} from "./reducers/pizzas";
+import {cart} from "./reducers/cart";
 
 
 const rootReducer = combineReducers({
     filters,
-    pizzas
+    pizzas,
+    cart
 })
 
 export const store = configureStore({

@@ -2,8 +2,11 @@ import React from 'react';
 import logo from '../assets/logo.png'
 import Button from "./Button";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+    const {totalPrice, totalCount} = useSelector(({cart}) => cart)
+
     return (
         <div className="header__block">
             <Link to={'/'}>
@@ -19,7 +22,7 @@ const Header = () => {
             </Link>
             <Link to={'/cart'}>
                 <Button className="button__cart">
-                    <span>400 ₽</span>
+                    <span>{totalPrice} ₽</span>
                     <div className="button__delimiter"></div>
                     <svg
                         width="18"
@@ -49,7 +52,7 @@ const Header = () => {
                             strokeLinejoin="round"
                         />
                     </svg>
-                    <span className="cart-counter">2</span>
+                    <span className="cart-counter">{totalCount}</span>
                 </Button>
             </Link>
         </div>

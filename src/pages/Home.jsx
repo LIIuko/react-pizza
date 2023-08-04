@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCategory, setSortBy} from "../redux/actions/filters";
 import {fetchPizzas} from "../redux/actions/pizzas";
 import LoadingBlock from "../components/LoadingBlock";
+import {addPizzaCart} from "../redux/actions/cart";
 
 
 const CategoriesNames = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
@@ -30,21 +31,27 @@ const Home = () => {
         dispatch(setSortBy(type))
     }, []);
 
+    const handleAddPizzaToCart = (item) => {
+        dispatch(addPizzaCart(item))
+    }
+
     return (
         <div>
             <div className="settings">
                 <Categories
                     items={CategoriesNames}
-                    onClickItem={onSelectCategory}/>
+                    onClickItem={onSelectCategory}
+                    activeCategory={category}/>
                 <SortPopup
                     items={SortNames}
-                    onClickItem={onSelectSort}/>
+                    onClickItem={onSelectSort}
+                    activeSortType={sortBy}/>
             </div>
             <h2 className="home__title">Все пиццы</h2>
             <div className="pizzas__container">
                 {isLoaded ?
                     items.map((item) => (
-                        <PizzaBlock key={item.id} {...item}/>
+                        <PizzaBlock key={item.id} onClickAddPizza={handleAddPizzaToCart} {...item}/>
                     ))
                     :
                     Array(12).fill(0).map((_, index) => (
