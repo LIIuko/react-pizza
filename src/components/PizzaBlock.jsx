@@ -32,7 +32,7 @@ const PizzaBlock = ({id, imageUrl, name, types, sizes, price, onClickAddPizza}) 
                 <ul className="pizza__dough">
                     {availableTypes.map((type, index) => (
                         <li
-                            onClick={() => setActiveType(index)}
+                            onClick={types.includes(index) ? () => setActiveType(index) : null}
                             key={type}
                             className={classNames({
                                 active: activeType === index,
@@ -45,7 +45,7 @@ const PizzaBlock = ({id, imageUrl, name, types, sizes, price, onClickAddPizza}) 
                 <ul className="pizza__size">
                     {availableSizes.map((size, index) => (
                         <li
-                            onClick={() => setActiveSize(index)}
+                            onClick={sizes.includes(size) ? () => setActiveSize(index): null}
                             key={size}
                             className={classNames({
                                 active: activeSize === index,
