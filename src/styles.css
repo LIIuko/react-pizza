@@ -116,6 +116,79 @@ body {
     color: #FFF;
 }
 
+.small-screen-categories{
+    display: none;
+    color: #2C2C2C;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    margin: 0 10px;
+}
+
+.categories__value{
+    cursor: pointer;
+    color: #FE5F1E;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    border-bottom: 1px dashed #FE5F1E;
+}
+
+.active.small-screen-categories{
+    display: block;
+}
+
+.categories.small.active{
+    position: absolute;
+    flex-direction: column;
+    left: 0;
+    top: 21px;
+}
+
+.categories__container{
+    display: flex;
+    position: relative;
+}
+
+.categories.small li{
+    display: none;
+}
+
+.categories.small.active li{
+    z-index: 1000;
+    border-radius: 0px;
+    display: block;
+    cursor: pointer;
+    list-style: none;
+    color: #000;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    padding: 10px 16px;
+    background-color: #fff;
+}
+
+.categories.small.active .active {
+    color: #FE5F1E;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+}
+
+
+
 .sort__title {
     color: #2C2C2C;
     font-family: Proxima Nova;
@@ -201,6 +274,25 @@ body {
 .pizza__block {
     flex: 0 1 22.9%;
     margin: 15px 0 65px 15px;
+}
+
+@media (max-width: 980px) {
+    .pizza__block{
+        flex: 0 1 29%;
+    }
+}
+
+@media (max-width: 840px) {
+    .pizza__block{
+        flex: 0 1 42%;
+    }
+}
+
+@media (max-width: 650px) {
+    .pizza__block{
+        flex: 0 1 100%;
+        margin: 15px 0 65px;
+    }
 }
 
 .pizza__img {
@@ -584,7 +676,7 @@ body {
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 145.4%; /* 26.172px */
+    line-height: 145.4%;
     letter-spacing: 0.18px;
     margin-bottom: 47px;
 }
