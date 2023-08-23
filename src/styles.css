@@ -553,11 +553,16 @@ body {
 }
 
 .cart__image-block {
+    display: none;
     flex: 1 1 55%;
 }
 
 .cart__func-block {
     flex: 1 1 45%;
+}
+
+.cart__image-block.active{
+    display: block;
 }
 
 .cart__image-block,
@@ -584,9 +589,13 @@ body {
 }
 
 .cart__pizza__img {
-    display: flex;
+    display: none;
     height: 100%;
     margin-right: 15px;
+}
+
+.cart__pizza__img.active{
+    display: flex;
 }
 
 .cart__pizza__img img {

@@ -9,7 +9,15 @@ const Categories = ({items, onClickItem, activeCategory}) => {
 
     const [openCategories, setOpenCategories] = useState(false)
     const categoriesRef = React.useRef();
-    const smallScreen = document.documentElement.clientWidth < 1190;
+    const [smallScreen, setSmallScreen] = useState(false);
+
+    const resize = () => {
+        setSmallScreen(document.documentElement.clientWidth < 1190);
+    }
+
+    useEffect(() => {
+        window.addEventListener("resize", resize)
+    }, [])
 
     const toggleCategories = () => {
         setOpenCategories(!openCategories)
@@ -41,12 +49,14 @@ const Categories = ({items, onClickItem, activeCategory}) => {
                 >
                 Категории:
             </div>
-            <span
-                ref={categoriesRef}
-                className={"categories__value"}
-                onClick={toggleCategories}>
+            {smallScreen &&
+                <span
+                    ref={categoriesRef}
+                    className={"categories__value"}
+                    onClick={toggleCategories}>
                 {items[activeCategory]}
             </span>
+            }
             <ul
                 className={classNameList}>
                 {items && items.map((name, index) => (

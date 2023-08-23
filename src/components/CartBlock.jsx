@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from "classnames";
 
 const CartBlock = (
     {
@@ -27,10 +28,14 @@ const CartBlock = (
         minusItem(id);
     }
 
+    const classNameImg = document.documentElement.clientWidth < 1190;
+
     return (
         <div className="cart__pizza__container">
-            <div className="cart__image-block">
-                <div className="cart__pizza__img">
+            <div className={"cart__image-block"}>
+                <div className={classNames("cart__pizza__img", {
+                    active: !classNameImg
+                })}>
                     <img src={imageUrl} alt=""/>
                 </div>
                 <div className="cart__pizza__desc">
